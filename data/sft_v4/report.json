@@ -1,0 +1,439 @@
+{
+  "label_version": 4,
+  "training_ready": false,
+  "creo_rebuild_verified": false,
+  "token_counts_available": false,
+  "passed": 46,
+  "xml_modes": {
+    "schema": 570,
+    "empty": 910,
+    "tree": 84,
+    "raw_xml": 6
+  },
+  "v3_system_chars": 35288,
+  "v4_system_chars": 23310,
+  "target_char_reduction": 0.12616772474878202,
+  "registry_sha256": "5cb793ae5f8e0a9432a93b43cab2f8d4d4304865767289c7ecc57eb197249998",
+  "limits": [
+    "Input evidence unchanged",
+    "No numeric rounding or geometry deletion",
+    "Field/XML equivalence is not proof of Creo rebuild",
+    "Measure actual tokens on server"
+  ],
+  "parts": [
+    {
+      "part": "gb118",
+      "split": "test",
+      "semantic_equivalence": true,
+      "v3_target_chars": 40331,
+      "v4_target_chars": 34677,
+      "v3_input_chars": 42138,
+      "v4_input_chars": 30160
+    },
+    {
+      "part": "gb9113_1",
+      "split": "test",
+      "semantic_equivalence": true,
+      "v3_target_chars": 82706,
+      "v4_target_chars": 68043,
+      "v3_input_chars": 50512,
+      "v4_input_chars": 38534
+    },
+    {
+      "part": "gb9116_10",
+      "split": "test",
+      "semantic_equivalence": true,
+      "v3_target_chars": 90042,
+      "v4_target_chars": 76370,
+      "v3_input_chars": 50143,
+      "v4_input_chars": 38165
+    },
+    {
+      "part": "gb9119_1",
+      "split": "test",
+      "semantic_equivalence": true,
+      "v3_target_chars": 183610,
+      "v4_target_chars": 156069,
+      "v3_input_chars": 69132,
+      "v4_input_chars": 57154
+    },
+    {
+      "part": "gb9123_10",
+      "split": "test",
+      "semantic_equivalence": true,
+      "v3_target_chars": 48064,
+      "v4_target_chars": 39951,
+      "v3_input_chars": 43258,
+      "v4_input_chars": 31280
+    },
+    {
+      "part": "gb9128_1_a",
+      "split": "test",
+      "semantic_equivalence": true,
+      "v3_target_chars": 19008,
+      "v4_target_chars": 16936,
+      "v3_input_chars": 41406,
+      "v4_input_chars": 29428
+    },
+    {
+      "part": "伞型齿轮gear",
+      "split": "test",
+      "semantic_equivalence": true,
+      "v3_target_chars": 369623,
+      "v4_target_chars": 344440,
+      "v3_input_chars": 309769,
+      "v4_input_chars": 297791
+    },
+    {
+      "part": "内直齿轮gear",
+      "split": "test",
+      "semantic_equivalence": true,
+      "v3_target_chars": 479008,
+      "v4_target_chars": 403746,
+      "v3_input_chars": 92620,
+      "v4_input_chars": 80642
+    },
+    {
+      "part": "压簧",
+      "split": "test",
+      "semantic_equivalence": true,
+      "v3_target_chars": 35646,
+      "v4_target_chars": 30354,
+      "v3_input_chars": 50236,
+      "v4_input_chars": 38258
+    },
+    {
+      "part": "外人字形齿轮gear",
+      "split": "test",
+      "semantic_equivalence": true,
+      "v3_target_chars": 804021,
+      "v4_target_chars": 778802,
+      "v3_input_chars": 396863,
+      "v4_input_chars": 384885
+    },
+    {
+      "part": "外直齿轮gear",
+      "split": "test",
+      "semantic_equivalence": true,
+      "v3_target_chars": 382785,
+      "v4_target_chars": 318412,
+      "v3_input_chars": 85433,
+      "v4_input_chars": 73455
+    },
+    {
+      "part": "拉簧",
+      "split": "test",
+      "semantic_equivalence": true,
+      "v3_target_chars": 81948,
+      "v4_target_chars": 63690,
+      "v3_input_chars": 51519,
+      "v4_input_chars": 39541
+    },
+    {
+      "part": "gb10",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 35512,
+      "v4_target_chars": 30793,
+      "v3_input_chars": 43796,
+      "v4_input_chars": 31818
+    },
+    {
+      "part": "gb100",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 34818,
+      "v4_target_chars": 31817,
+      "v3_input_chars": 43749,
+      "v4_input_chars": 31771
+    },
+    {
+      "part": "gb1007",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 49302,
+      "v4_target_chars": 42586,
+      "v3_input_chars": 47209,
+      "v4_input_chars": 35231
+    },
+    {
+      "part": "gb101",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 48620,
+      "v4_target_chars": 43614,
+      "v3_input_chars": 44586,
+      "v4_input_chars": 32608
+    },
+    {
+      "part": "gb1011",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 7974,
+      "v4_target_chars": 7822,
+      "v3_input_chars": 39683,
+      "v4_input_chars": 27705
+    },
+    {
+      "part": "gb1012",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 22330,
+      "v4_target_chars": 20173,
+      "v3_input_chars": 40733,
+      "v4_input_chars": 28755
+    },
+    {
+      "part": "gb1021",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 26265,
+      "v4_target_chars": 24265,
+      "v3_input_chars": 44608,
+      "v4_input_chars": 32630
+    },
+    {
+      "part": "gb1022",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 26636,
+      "v4_target_chars": 24636,
+      "v3_input_chars": 44704,
+      "v4_input_chars": 32726
+    },
+    {
+      "part": "gb1229",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 50353,
+      "v4_target_chars": 43637,
+      "v3_input_chars": 47466,
+      "v4_input_chars": 35488
+    },
+    {
+      "part": "gb29_2",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 90559,
+      "v4_target_chars": 74522,
+      "v3_input_chars": 55015,
+      "v4_input_chars": 43037
+    },
+    {
+      "part": "gb5285",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 84780,
+      "v4_target_chars": 71800,
+      "v3_input_chars": 49223,
+      "v4_input_chars": 37245
+    },
+    {
+      "part": "gb9113_10_a",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 95496,
+      "v4_target_chars": 80598,
+      "v3_input_chars": 51686,
+      "v4_input_chars": 39708
+    },
+    {
+      "part": "gb9114_1",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 69332,
+      "v4_target_chars": 58185,
+      "v3_input_chars": 46641,
+      "v4_input_chars": 34663
+    },
+    {
+      "part": "gb9114_2_a",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 93068,
+      "v4_target_chars": 78841,
+      "v3_input_chars": 50527,
+      "v4_input_chars": 38549
+    },
+    {
+      "part": "gb9115_10",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 94738,
+      "v4_target_chars": 79840,
+      "v3_input_chars": 51655,
+      "v4_input_chars": 39677
+    },
+    {
+      "part": "gb9116_1",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 75877,
+      "v4_target_chars": 62440,
+      "v3_input_chars": 48867,
+      "v4_input_chars": 36889
+    },
+    {
+      "part": "gb9117_1",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 59557,
+      "v4_target_chars": 48673,
+      "v3_input_chars": 44999,
+      "v4_input_chars": 33021
+    },
+    {
+      "part": "gb9117_2",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 70102,
+      "v4_target_chars": 58871,
+      "v3_input_chars": 47039,
+      "v4_input_chars": 35061
+    },
+    {
+      "part": "gb9118_1_l1",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 8575,
+      "v4_target_chars": 8423,
+      "v3_input_chars": 40657,
+      "v4_input_chars": 28679
+    },
+    {
+      "part": "gb9119_10",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 52448,
+      "v4_target_chars": 43712,
+      "v3_input_chars": 43986,
+      "v4_input_chars": 32008
+    },
+    {
+      "part": "gb9120_1_n",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 12374,
+      "v4_target_chars": 12222,
+      "v3_input_chars": 42282,
+      "v4_input_chars": 30304
+    },
+    {
+      "part": "gb9120_1_p",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 49487,
+      "v4_target_chars": 39854,
+      "v3_input_chars": 43631,
+      "v4_input_chars": 31653
+    },
+    {
+      "part": "gb9121_1_p",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 49659,
+      "v4_target_chars": 40026,
+      "v3_input_chars": 43589,
+      "v4_input_chars": 31611
+    },
+    {
+      "part": "gb9121_1_r",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 5369,
+      "v4_target_chars": 5217,
+      "v3_input_chars": 38463,
+      "v4_input_chars": 26485
+    },
+    {
+      "part": "gb9122_1_l",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 8831,
+      "v4_target_chars": 8679,
+      "v3_input_chars": 41227,
+      "v4_input_chars": 29249
+    },
+    {
+      "part": "gb9122_1_p",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 49728,
+      "v4_target_chars": 40095,
+      "v3_input_chars": 43592,
+      "v4_input_chars": 31614
+    },
+    {
+      "part": "gb9123_1",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 38139,
+      "v4_target_chars": 30373,
+      "v3_input_chars": 42176,
+      "v4_input_chars": 30198
+    },
+    {
+      "part": "gb9126_1_a",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 41875,
+      "v4_target_chars": 33594,
+      "v3_input_chars": 42930,
+      "v4_input_chars": 30952
+    },
+    {
+      "part": "gb9128_1_b",
+      "split": "train",
+      "semantic_equivalence": true,
+      "v3_target_chars": 18909,
+      "v4_target_chars": 16837,
+      "v3_input_chars": 41378,
+      "v4_input_chars": 29400
+    },
+    {
+      "part": "gb11",
+      "split": "val",
+      "semantic_equivalence": true,
+      "v3_target_chars": 24481,
+      "v4_target_chars": 21928,
+      "v3_input_chars": 43352,
+      "v4_input_chars": 31374
+    },
+    {
+      "part": "gb117",
+      "split": "val",
+      "semantic_equivalence": true,
+      "v3_target_chars": 9568,
+      "v4_target_chars": 9405,
+      "v3_input_chars": 39237,
+      "v4_input_chars": 27259
+    },
+    {
+      "part": "gb9115_1",
+      "split": "val",
+      "semantic_equivalence": true,
+      "v3_target_chars": 62324,
+      "v4_target_chars": 50853,
+      "v3_input_chars": 46620,
+      "v4_input_chars": 34642
+    },
+    {
+      "part": "gb9118_1_h",
+      "split": "val",
+      "semantic_equivalence": true,
+      "v3_target_chars": 150088,
+      "v4_target_chars": 127075,
+      "v3_input_chars": 62469,
+      "v4_input_chars": 50491
+    },
+    {
+      "part": "gb9126_1_b",
+      "split": "val",
+      "semantic_equivalence": true,
+      "v3_target_chars": 40907,
+      "v4_target_chars": 32626,
+      "v3_input_chars": 42840,
+      "v4_input_chars": 30862
+    }
+  ]
+}

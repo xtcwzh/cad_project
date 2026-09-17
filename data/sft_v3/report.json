@@ -1,0 +1,458 @@
+{
+  "label_version": 3,
+  "training_ready": false,
+  "creo_rebuild_verified": false,
+  "check": "all JSON fields exact; XML tags/attributes/text/order equivalent ignoring layout whitespace",
+  "base64_payload_hits": 0,
+  "passed": 46,
+  "schemas_from_train_only": 16,
+  "registry_sha256": "5cb793ae5f8e0a9432a93b43cab2f8d4d4304865767289c7ecc57eb197249998",
+  "counts": {
+    "train": 29,
+    "val": 5,
+    "test": 12
+  },
+  "v2_bytes": 9173343,
+  "v3_bytes": 4286817,
+  "label_reduction_fraction": 0.5326875927347314,
+  "shared_system_chars": 35288,
+  "max_target_chars": 804021,
+  "avg_target_chars": 92932,
+  "xml_modes": {
+    "revolve:schema": 65,
+    "source_xml_missing:empty": 910,
+    "datum:schema": 285,
+    "extrude:schema": 83,
+    "chamfer:schema": 5,
+    "hole:raw_xml": 1,
+    "hole:schema": 107,
+    "pattern:schema": 25,
+    "other:raw_xml": 44,
+    "extrude:raw_xml": 39,
+    "sweep:raw_xml": 2,
+    "revolve:raw_xml": 4
+  },
+  "parts": [
+    {
+      "part": "gb10",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 43796,
+      "target_chars": 35512,
+      "v2_bytes": 92059,
+      "v3_bytes": 35552
+    },
+    {
+      "part": "gb100",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 43749,
+      "target_chars": 34818,
+      "v2_bytes": 81983,
+      "v3_bytes": 34854
+    },
+    {
+      "part": "gb1007",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 47209,
+      "target_chars": 49302,
+      "v2_bytes": 109223,
+      "v3_bytes": 49340
+    },
+    {
+      "part": "gb101",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 44586,
+      "target_chars": 48620,
+      "v2_bytes": 112400,
+      "v3_bytes": 48666
+    },
+    {
+      "part": "gb1011",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 39683,
+      "target_chars": 7974,
+      "v2_bytes": 21859,
+      "v3_bytes": 7990
+    },
+    {
+      "part": "gb1012",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 40733,
+      "target_chars": 22330,
+      "v2_bytes": 54496,
+      "v3_bytes": 22356
+    },
+    {
+      "part": "gb1021",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 44608,
+      "target_chars": 26265,
+      "v2_bytes": 61089,
+      "v3_bytes": 26295
+    },
+    {
+      "part": "gb1022",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 44704,
+      "target_chars": 26636,
+      "v2_bytes": 60825,
+      "v3_bytes": 26666
+    },
+    {
+      "part": "gb11",
+      "split": "val",
+      "semantic_equivalence": true,
+      "input_chars": 43352,
+      "target_chars": 24481,
+      "v2_bytes": 62632,
+      "v3_bytes": 24511
+    },
+    {
+      "part": "gb117",
+      "split": "val",
+      "semantic_equivalence": true,
+      "input_chars": 39237,
+      "target_chars": 9568,
+      "v2_bytes": 23713,
+      "v3_bytes": 9582
+    },
+    {
+      "part": "gb118",
+      "split": "test",
+      "semantic_equivalence": true,
+      "input_chars": 42138,
+      "target_chars": 40331,
+      "v2_bytes": 83132,
+      "v3_bytes": 40365
+    },
+    {
+      "part": "gb1229",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 47466,
+      "target_chars": 50353,
+      "v2_bytes": 110274,
+      "v3_bytes": 50391
+    },
+    {
+      "part": "gb29_2",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 55015,
+      "target_chars": 90559,
+      "v2_bytes": 228116,
+      "v3_bytes": 90631
+    },
+    {
+      "part": "gb5285",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 49223,
+      "target_chars": 84780,
+      "v2_bytes": 206453,
+      "v3_bytes": 84846
+    },
+    {
+      "part": "gb9113_1",
+      "split": "test",
+      "semantic_equivalence": true,
+      "input_chars": 50512,
+      "target_chars": 82706,
+      "v2_bytes": 229814,
+      "v3_bytes": 82756
+    },
+    {
+      "part": "gb9113_10_a",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 51686,
+      "target_chars": 95496,
+      "v2_bytes": 239385,
+      "v3_bytes": 95600
+    },
+    {
+      "part": "gb9114_1",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 46641,
+      "target_chars": 69332,
+      "v2_bytes": 177977,
+      "v3_bytes": 69406
+    },
+    {
+      "part": "gb9114_2_a",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 50527,
+      "target_chars": 93068,
+      "v2_bytes": 238318,
+      "v3_bytes": 93174
+    },
+    {
+      "part": "gb9115_1",
+      "split": "val",
+      "semantic_equivalence": true,
+      "input_chars": 46620,
+      "target_chars": 62324,
+      "v2_bytes": 169133,
+      "v3_bytes": 62366
+    },
+    {
+      "part": "gb9115_10",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 51655,
+      "target_chars": 94738,
+      "v2_bytes": 238623,
+      "v3_bytes": 94842
+    },
+    {
+      "part": "gb9116_1",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 48867,
+      "target_chars": 75877,
+      "v2_bytes": 218056,
+      "v3_bytes": 75921
+    },
+    {
+      "part": "gb9116_10",
+      "split": "test",
+      "semantic_equivalence": true,
+      "input_chars": 50143,
+      "target_chars": 90042,
+      "v2_bytes": 229517,
+      "v3_bytes": 90140
+    },
+    {
+      "part": "gb9117_1",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 44999,
+      "target_chars": 59557,
+      "v2_bytes": 170507,
+      "v3_bytes": 59595
+    },
+    {
+      "part": "gb9117_2",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 47039,
+      "target_chars": 70102,
+      "v2_bytes": 183402,
+      "v3_bytes": 70170
+    },
+    {
+      "part": "gb9118_1_h",
+      "split": "val",
+      "semantic_equivalence": true,
+      "input_chars": 62469,
+      "target_chars": 150088,
+      "v2_bytes": 412859,
+      "v3_bytes": 150156
+    },
+    {
+      "part": "gb9118_1_l1",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 40657,
+      "target_chars": 8575,
+      "v2_bytes": 23501,
+      "v3_bytes": 8587
+    },
+    {
+      "part": "gb9119_1",
+      "split": "test",
+      "semantic_equivalence": true,
+      "input_chars": 69132,
+      "target_chars": 183610,
+      "v2_bytes": 509651,
+      "v3_bytes": 183680
+    },
+    {
+      "part": "gb9119_10",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 43986,
+      "target_chars": 52448,
+      "v2_bytes": 138503,
+      "v3_bytes": 52500
+    },
+    {
+      "part": "gb9120_1_n",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 42282,
+      "target_chars": 12374,
+      "v2_bytes": 30197,
+      "v3_bytes": 12390
+    },
+    {
+      "part": "gb9120_1_p",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 43631,
+      "target_chars": 49487,
+      "v2_bytes": 141956,
+      "v3_bytes": 49515
+    },
+    {
+      "part": "gb9121_1_p",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 43589,
+      "target_chars": 49659,
+      "v2_bytes": 142128,
+      "v3_bytes": 49687
+    },
+    {
+      "part": "gb9121_1_r",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 38463,
+      "target_chars": 5369,
+      "v2_bytes": 16764,
+      "v3_bytes": 5381
+    },
+    {
+      "part": "gb9122_1_l",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 41227,
+      "target_chars": 8831,
+      "v2_bytes": 24831,
+      "v3_bytes": 8843
+    },
+    {
+      "part": "gb9122_1_p",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 43592,
+      "target_chars": 49728,
+      "v2_bytes": 142207,
+      "v3_bytes": 49756
+    },
+    {
+      "part": "gb9123_1",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 42176,
+      "target_chars": 38139,
+      "v2_bytes": 113228,
+      "v3_bytes": 38159
+    },
+    {
+      "part": "gb9123_10",
+      "split": "test",
+      "semantic_equivalence": true,
+      "input_chars": 43258,
+      "target_chars": 48064,
+      "v2_bytes": 124343,
+      "v3_bytes": 48114
+    },
+    {
+      "part": "gb9126_1_a",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 42930,
+      "target_chars": 41875,
+      "v2_bytes": 119113,
+      "v3_bytes": 41901
+    },
+    {
+      "part": "gb9126_1_b",
+      "split": "val",
+      "semantic_equivalence": true,
+      "input_chars": 42840,
+      "target_chars": 40907,
+      "v2_bytes": 118145,
+      "v3_bytes": 40933
+    },
+    {
+      "part": "gb9128_1_a",
+      "split": "test",
+      "semantic_equivalence": true,
+      "input_chars": 41406,
+      "target_chars": 19008,
+      "v2_bytes": 45832,
+      "v3_bytes": 19018
+    },
+    {
+      "part": "gb9128_1_b",
+      "split": "train",
+      "semantic_equivalence": true,
+      "input_chars": 41378,
+      "target_chars": 18909,
+      "v2_bytes": 45733,
+      "v3_bytes": 18919
+    },
+    {
+      "part": "伞型齿轮gear",
+      "split": "test",
+      "semantic_equivalence": true,
+      "input_chars": 309769,
+      "target_chars": 369623,
+      "v2_bytes": 630104,
+      "v3_bytes": 371509
+    },
+    {
+      "part": "内直齿轮gear",
+      "split": "test",
+      "semantic_equivalence": true,
+      "input_chars": 92620,
+      "target_chars": 479008,
+      "v2_bytes": 715776,
+      "v3_bytes": 481420
+    },
+    {
+      "part": "压簧",
+      "split": "test",
+      "semantic_equivalence": true,
+      "input_chars": 50236,
+      "target_chars": 35646,
+      "v2_bytes": 74149,
+      "v3_bytes": 35960
+    },
+    {
+      "part": "外人字形齿轮gear",
+      "split": "test",
+      "semantic_equivalence": true,
+      "input_chars": 396863,
+      "target_chars": 804021,
+      "v2_bytes": 1512110,
+      "v3_bytes": 807061
+    },
+    {
+      "part": "外直齿轮gear",
+      "split": "test",
+      "semantic_equivalence": true,
+      "input_chars": 85433,
+      "target_chars": 382785,
+      "v2_bytes": 560801,
+      "v3_bytes": 384877
+    },
+    {
+      "part": "拉簧",
+      "split": "test",
+      "semantic_equivalence": true,
+      "input_chars": 51519,
+      "target_chars": 81948,
+      "v2_bytes": 128426,
+      "v3_bytes": 82436
+    }
+  ],
+  "limits": [
+    "Geometry mapping tables retained until importer supports symbolic references",
+    "Unsupported/unseen XML preserved explicitly",
+    "Registry must be frozen with model checkpoint",
+    "Real tokenizer/context budget and Creo rebuild unverified",
+    "Caller context is annotated metadata, not recovered from geometry"
+  ]
+}

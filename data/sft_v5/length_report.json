@@ -1,0 +1,472 @@
+{
+  "length_check_version": 2,
+  "sft_length_method": "prompt plus separately encoded target plus 8-token allowance; estimate, not full training template count",
+  "token_counts_available": true,
+  "rows": [
+    {
+      "part": "gb118",
+      "split": "test",
+      "input_chars": 29942,
+      "target_chars": 30963,
+      "prompt_tokens": 10012,
+      "target_tokens": 19874,
+      "minimum_sft_tokens": 29894,
+      "fits": false
+    },
+    {
+      "part": "gb9113_1",
+      "split": "test",
+      "input_chars": 36303,
+      "target_chars": 53722,
+      "prompt_tokens": 13577,
+      "target_tokens": 37711,
+      "minimum_sft_tokens": 51296,
+      "fits": false
+    },
+    {
+      "part": "gb9116_10",
+      "split": "test",
+      "input_chars": 36068,
+      "target_chars": 53939,
+      "prompt_tokens": 13462,
+      "target_tokens": 37955,
+      "minimum_sft_tokens": 51425,
+      "fits": false
+    },
+    {
+      "part": "gb9119_1",
+      "split": "test",
+      "input_chars": 49537,
+      "target_chars": 103247,
+      "prompt_tokens": 21871,
+      "target_tokens": 75681,
+      "minimum_sft_tokens": 97560,
+      "fits": false
+    },
+    {
+      "part": "gb9123_10",
+      "split": "test",
+      "input_chars": 30585,
+      "target_chars": 28934,
+      "prompt_tokens": 10009,
+      "target_tokens": 19483,
+      "minimum_sft_tokens": 29500,
+      "fits": false
+    },
+    {
+      "part": "gb9128_1_a",
+      "split": "test",
+      "input_chars": 29052,
+      "target_chars": 16296,
+      "prompt_tokens": 9291,
+      "target_tokens": 11430,
+      "minimum_sft_tokens": 20729,
+      "fits": false
+    },
+    {
+      "part": "伞型齿轮gear",
+      "split": "test",
+      "input_chars": 283929,
+      "target_chars": 249764,
+      "prompt_tokens": 218330,
+      "target_tokens": 190621,
+      "minimum_sft_tokens": 408959,
+      "fits": false
+    },
+    {
+      "part": "内直齿轮gear",
+      "split": "test",
+      "input_chars": 73195,
+      "target_chars": 185494,
+      "prompt_tokens": 37306,
+      "target_tokens": 139766,
+      "minimum_sft_tokens": 177080,
+      "fits": false
+    },
+    {
+      "part": "压簧",
+      "split": "test",
+      "input_chars": 38643,
+      "target_chars": 26596,
+      "prompt_tokens": 18092,
+      "target_tokens": 17325,
+      "minimum_sft_tokens": 35425,
+      "fits": false
+    },
+    {
+      "part": "外人字形齿轮gear",
+      "split": "test",
+      "input_chars": 372640,
+      "target_chars": 613643,
+      "prompt_tokens": 294415,
+      "target_tokens": 506526,
+      "minimum_sft_tokens": 800949,
+      "fits": false
+    },
+    {
+      "part": "外直齿轮gear",
+      "split": "test",
+      "input_chars": 63601,
+      "target_chars": 150332,
+      "prompt_tokens": 31359,
+      "target_tokens": 110743,
+      "minimum_sft_tokens": 142110,
+      "fits": false
+    },
+    {
+      "part": "拉簧",
+      "split": "test",
+      "input_chars": 39168,
+      "target_chars": 45958,
+      "prompt_tokens": 17766,
+      "target_tokens": 27518,
+      "minimum_sft_tokens": 45292,
+      "fits": false
+    },
+    {
+      "part": "gb10",
+      "split": "train",
+      "input_chars": 31586,
+      "target_chars": 27577,
+      "prompt_tokens": 10816,
+      "target_tokens": 18561,
+      "minimum_sft_tokens": 29385,
+      "fits": false
+    },
+    {
+      "part": "gb100",
+      "split": "train",
+      "input_chars": 31477,
+      "target_chars": 28236,
+      "prompt_tokens": 10956,
+      "target_tokens": 19976,
+      "minimum_sft_tokens": 30940,
+      "fits": false
+    },
+    {
+      "part": "gb1007",
+      "split": "train",
+      "input_chars": 34110,
+      "target_chars": 36514,
+      "prompt_tokens": 12888,
+      "target_tokens": 26450,
+      "minimum_sft_tokens": 39346,
+      "fits": false
+    },
+    {
+      "part": "gb101",
+      "split": "train",
+      "input_chars": 32219,
+      "target_chars": 37828,
+      "prompt_tokens": 11328,
+      "target_tokens": 26999,
+      "minimum_sft_tokens": 38335,
+      "fits": false
+    },
+    {
+      "part": "gb1011",
+      "split": "train",
+      "input_chars": 27927,
+      "target_chars": 7595,
+      "prompt_tokens": 8328,
+      "target_tokens": 5145,
+      "minimum_sft_tokens": 13481,
+      "fits": false
+    },
+    {
+      "part": "gb1012",
+      "split": "train",
+      "input_chars": 28755,
+      "target_chars": 18408,
+      "prompt_tokens": 9018,
+      "target_tokens": 12996,
+      "minimum_sft_tokens": 22022,
+      "fits": false
+    },
+    {
+      "part": "gb1021",
+      "split": "train",
+      "input_chars": 32668,
+      "target_chars": 21239,
+      "prompt_tokens": 11274,
+      "target_tokens": 15541,
+      "minimum_sft_tokens": 26823,
+      "fits": false
+    },
+    {
+      "part": "gb1022",
+      "split": "train",
+      "input_chars": 32764,
+      "target_chars": 21572,
+      "prompt_tokens": 11346,
+      "target_tokens": 15866,
+      "minimum_sft_tokens": 27220,
+      "fits": false
+    },
+    {
+      "part": "gb1229",
+      "split": "train",
+      "input_chars": 34270,
+      "target_chars": 36635,
+      "prompt_tokens": 13039,
+      "target_tokens": 26861,
+      "minimum_sft_tokens": 39908,
+      "fits": false
+    },
+    {
+      "part": "gb29_2",
+      "split": "train",
+      "input_chars": 40992,
+      "target_chars": 66049,
+      "prompt_tokens": 17299,
+      "target_tokens": 45615,
+      "minimum_sft_tokens": 62922,
+      "fits": false
+    },
+    {
+      "part": "gb5285",
+      "split": "train",
+      "input_chars": 35999,
+      "target_chars": 62879,
+      "prompt_tokens": 14042,
+      "target_tokens": 44571,
+      "minimum_sft_tokens": 58621,
+      "fits": false
+    },
+    {
+      "part": "gb9113_10_a",
+      "split": "train",
+      "input_chars": 37346,
+      "target_chars": 57427,
+      "prompt_tokens": 14319,
+      "target_tokens": 40283,
+      "minimum_sft_tokens": 54610,
+      "fits": false
+    },
+    {
+      "part": "gb9114_1",
+      "split": "train",
+      "input_chars": 33530,
+      "target_chars": 44855,
+      "prompt_tokens": 11947,
+      "target_tokens": 30701,
+      "minimum_sft_tokens": 42656,
+      "fits": false
+    },
+    {
+      "part": "gb9114_2_a",
+      "split": "train",
+      "input_chars": 36356,
+      "target_chars": 55755,
+      "prompt_tokens": 13580,
+      "target_tokens": 38654,
+      "minimum_sft_tokens": 52242,
+      "fits": false
+    },
+    {
+      "part": "gb9115_10",
+      "split": "train",
+      "input_chars": 37312,
+      "target_chars": 56783,
+      "prompt_tokens": 14285,
+      "target_tokens": 39717,
+      "minimum_sft_tokens": 54010,
+      "fits": false
+    },
+    {
+      "part": "gb9116_1",
+      "split": "train",
+      "input_chars": 34938,
+      "target_chars": 48966,
+      "prompt_tokens": 12637,
+      "target_tokens": 34070,
+      "minimum_sft_tokens": 46715,
+      "fits": false
+    },
+    {
+      "part": "gb9117_1",
+      "split": "train",
+      "input_chars": 32124,
+      "target_chars": 39246,
+      "prompt_tokens": 11008,
+      "target_tokens": 26958,
+      "minimum_sft_tokens": 37974,
+      "fits": false
+    },
+    {
+      "part": "gb9117_2",
+      "split": "train",
+      "input_chars": 33934,
+      "target_chars": 44953,
+      "prompt_tokens": 12211,
+      "target_tokens": 31075,
+      "minimum_sft_tokens": 43294,
+      "fits": false
+    },
+    {
+      "part": "gb9118_1_l1",
+      "split": "train",
+      "input_chars": 28668,
+      "target_chars": 8460,
+      "prompt_tokens": 8979,
+      "target_tokens": 6132,
+      "minimum_sft_tokens": 15119,
+      "fits": false
+    },
+    {
+      "part": "gb9119_10",
+      "split": "train",
+      "input_chars": 31197,
+      "target_chars": 31917,
+      "prompt_tokens": 10383,
+      "target_tokens": 21760,
+      "minimum_sft_tokens": 32151,
+      "fits": false
+    },
+    {
+      "part": "gb9120_1_n",
+      "split": "train",
+      "input_chars": 30033,
+      "target_chars": 11615,
+      "prompt_tokens": 9930,
+      "target_tokens": 8698,
+      "minimum_sft_tokens": 18636,
+      "fits": false
+    },
+    {
+      "part": "gb9120_1_p",
+      "split": "train",
+      "input_chars": 30868,
+      "target_chars": 32539,
+      "prompt_tokens": 10171,
+      "target_tokens": 21603,
+      "minimum_sft_tokens": 31782,
+      "fits": false
+    },
+    {
+      "part": "gb9121_1_p",
+      "split": "train",
+      "input_chars": 30835,
+      "target_chars": 32711,
+      "prompt_tokens": 10136,
+      "target_tokens": 21774,
+      "minimum_sft_tokens": 31918,
+      "fits": false
+    },
+    {
+      "part": "gb9121_1_r",
+      "split": "train",
+      "input_chars": 26682,
+      "target_chars": 5254,
+      "prompt_tokens": 7677,
+      "target_tokens": 3371,
+      "minimum_sft_tokens": 11056,
+      "fits": false
+    },
+    {
+      "part": "gb9122_1_l",
+      "split": "train",
+      "input_chars": 29088,
+      "target_chars": 8716,
+      "prompt_tokens": 9166,
+      "target_tokens": 6305,
+      "minimum_sft_tokens": 15479,
+      "fits": false
+    },
+    {
+      "part": "gb9122_1_p",
+      "split": "train",
+      "input_chars": 30839,
+      "target_chars": 32800,
+      "prompt_tokens": 10131,
+      "target_tokens": 21832,
+      "minimum_sft_tokens": 31971,
+      "fits": false
+    },
+    {
+      "part": "gb9123_1",
+      "split": "train",
+      "input_chars": 29622,
+      "target_chars": 23448,
+      "prompt_tokens": 9346,
+      "target_tokens": 15493,
+      "minimum_sft_tokens": 24847,
+      "fits": false
+    },
+    {
+      "part": "gb9126_1_a",
+      "split": "train",
+      "input_chars": 30112,
+      "target_chars": 26619,
+      "prompt_tokens": 9693,
+      "target_tokens": 17831,
+      "minimum_sft_tokens": 27532,
+      "fits": false
+    },
+    {
+      "part": "gb9128_1_b",
+      "split": "train",
+      "input_chars": 29024,
+      "target_chars": 15986,
+      "prompt_tokens": 9266,
+      "target_tokens": 11078,
+      "minimum_sft_tokens": 20352,
+      "fits": false
+    },
+    {
+      "part": "gb11",
+      "split": "val",
+      "input_chars": 31163,
+      "target_chars": 19542,
+      "prompt_tokens": 10551,
+      "target_tokens": 13419,
+      "minimum_sft_tokens": 23978,
+      "fits": false
+    },
+    {
+      "part": "gb117",
+      "split": "val",
+      "input_chars": 27456,
+      "target_chars": 8976,
+      "prompt_tokens": 8349,
+      "target_tokens": 6447,
+      "minimum_sft_tokens": 14804,
+      "fits": false
+    },
+    {
+      "part": "gb9115_1",
+      "split": "val",
+      "input_chars": 33472,
+      "target_chars": 41514,
+      "prompt_tokens": 11935,
+      "target_tokens": 28702,
+      "minimum_sft_tokens": 40645,
+      "fits": false
+    },
+    {
+      "part": "gb9118_1_h",
+      "split": "val",
+      "input_chars": 45114,
+      "target_chars": 88167,
+      "prompt_tokens": 19237,
+      "target_tokens": 63399,
+      "minimum_sft_tokens": 82644,
+      "fits": false
+    },
+    {
+      "part": "gb9126_1_b",
+      "split": "val",
+      "input_chars": 30032,
+      "target_chars": 25659,
+      "prompt_tokens": 9614,
+      "target_tokens": 16740,
+      "minimum_sft_tokens": 26362,
+      "fits": false
+    }
+  ],
+  "context_length": 8192,
+  "max_tokens": 4096,
+  "max_input_chars": 372640,
+  "max_target_chars": 613643,
+  "all_fit": false
+}

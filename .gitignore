@@ -1,0 +1,8 @@
+outputs/
+unsloth_compiled_cache/
+**/__pycache__/
+*.py[cod]
+*.tmp
+.DS_Store
+.venv/
+.env

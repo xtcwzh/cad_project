@@ -1,0 +1,22 @@
+{
+  "model_path": "~/models/Qwen3.8-27B-bnb-4bit",
+  "sft_root": "data/sft_v6",
+  "output_root": "outputs/qlora-3gpu",
+  "gpu": "0,1,2",
+  "device_map": "balanced",
+  "weight_budget_per_gpu": "20GiB",
+  "lengths": [65536],
+  "probe_steps": 3,
+  "timeout_seconds": 14400,
+  "max_seq_length": 65536,
+  "r": 16,
+  "lora_alpha": 16,
+  "learning_rate": 0.0001,
+  "gradient_accumulation_steps": 4,
+  "epochs": 3,
+  "save_steps": 20,
+  "seed": 3407,
+  "offload_embedding": false,
+  "optim": "adamw_8bit",
+  "enable_thinking": false
+}
