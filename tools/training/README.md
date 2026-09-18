@@ -2,25 +2,6 @@
 
 ## 当前：四卡 PCIe 显式分层实验
 
-### 运行诊断（保持四卡 / 32K / fp32 / chunked1024）
-
-`configs/qlora_probe_4gpu_chunked_1024_diag.json` 与 chunked1024 相同，只打开运行诊断。
-记录 SDPA 调用处 Q/K/V 与处理后 attn_mask 的 shape/dtype/device，以及 `is_causal`、
-`enable_gqa` 是否被传入；记录 decoder 层号、`block_type`、以及
-`no_grad` / `grad` / `checkpoint_recompute`（由 `grad_enabled` 与 checkpoint 栈帧测得）；
-用 aten `TorchDispatchMode` 记录名字含 `scaled_dot_product` 的前向/反向算子。
-OOM 时保存有界 CUDA 分配历史（默认最多 2048 条）和失败分配的 Python 栈，不含激活。
-SDPA 包装使用 `torch.compiler.disable`，dispatch mode 会 graph break；**此跑的显存峰值不能与未诊断探测比较**。
-未出现在日志里的字段不要当成实测。
-
-```bash
-python -B -m unittest discover -s tools/training -p 'test_runtime_diagnostics.py' -v
-python tools/training/probe_training_memory.py --config configs/qlora_probe_4gpu_chunked_1024_diag.json --lengths 32768
-```
-
-输出在 `outputs/qlora-4gpu-chunked-1024-diag/`：`diagnostics.json`、`events.jsonl`，
-摘要写入 `result.json` 的 `diagnostics`。测试只用小型 CPU 张量。
-
 ### MLP 按 token 分块实验（32K 上下文不变）
 
 本轮 2048-token 分块已消除原先 1.06 GiB 的单个 MLP gate 中间张量，但四卡在第一步

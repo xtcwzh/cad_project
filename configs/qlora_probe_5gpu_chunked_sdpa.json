@@ -1,11 +1,12 @@
 {
   "model_path": "~/models/Qwen3.8-27B-bnb-4bit",
   "sft_root": "data/sft_v6",
-  "output_root": "outputs/qlora-4gpu-chunked-1024-diag",
-  "gpu": "0,1,2,3",
+  "output_root": "outputs/qlora-5gpu-chunked-sdpa",
+  "gpu": "0,1,2,3,4",
   "device_map": "explicit_layers",
-  "layer_counts": [12, 20, 20, 12],
+  "layer_counts": [8, 16, 16, 16, 8],
   "precision": "fp32",
+  "attn_implementation": "sdpa",
   "lengths": [32768],
   "probe_steps": 3,
   "timeout_seconds": 14400,
@@ -21,6 +22,5 @@
   "optim": "adamw_8bit",
   "enable_thinking": false,
   "max_grad_norm": 1.0,
-  "mlp_chunk_tokens": 1024,
-  "runtime_diagnostics": true
+  "mlp_chunk_tokens": 1024
 }

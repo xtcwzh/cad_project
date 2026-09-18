@@ -241,16 +241,10 @@ def load_model(c, observer=None):
         chunk_info = install_chunked_mlp(model, c['mlp_chunk_tokens'])
         print('Chunked MLP:', json.dumps(chunk_info), flush=True)
         if observer: observer('mlp_chunking_installed', model)
-    diag_info = {}
-    if c.get('runtime_diagnostics'):
-        from runtime_diagnostics import install_runtime_diagnostics
-        diag_info = install_runtime_diagnostics(model, c)
-        print('Runtime diagnostics:', json.dumps(diag_info), flush=True)
-        if observer: observer('diagnostics_installed', model)
     trainable = [(n, p) for n, p in model.named_parameters() if p.requires_grad]
     if not trainable or any('lora_' not in n for n, _ in trainable):
         raise RuntimeError('Expected only LoRA parameters to be trainable')
-    return model, processor, {**chunk_info, **diag_info, 'dtype': str(dtype), 'bf16': use_bf16, 'fp16': False,
+    return model, processor, {**chunk_info, 'dtype': str(dtype), 'bf16': use_bf16, 'fp16': False,
         'attn_implementation': getattr(model.config, '_attn_implementation', None),
         'compute_capability': [major, minor],
         'parallelism': 'single_process_layer_sharding' if sharded else 'single_gpu',
