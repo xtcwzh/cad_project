@@ -1,9 +1,10 @@
-"""Shared single-GPU QLoRA and exact chat encoding. Heavy imports stay lazy."""
+"""Shared QLoRA and exact chat encoding. Heavy imports stay lazy."""
 import hashlib
 import inspect
 import json
 import os
 from pathlib import Path
+from device_plan import plan_from_config, validate_device_plan
 
 PROJECT = Path(__file__).resolve().parents[2]
 
@@ -149,6 +150,16 @@ def memory_snapshot(model=None):
         result['parameter_storage_gib'] = groups
         result['embedding_and_head'] = embeddings
         result['hf_device_map'] = {k: str(v) for k, v in (getattr(model, 'hf_device_map', None) or {}).items()}
+        dtypes, compute = {}, {}
+        for _, param in model.named_parameters():
+            key = str(param.dtype)
+            dtypes[key] = dtypes.get(key, 0) + param.numel()
+        for _, module in model.named_modules():
+            if hasattr(module, 'compute_dtype'):
+                key = type(module).__name__ + ':' + str(module.compute_dtype)
+                compute[key] = compute.get(key, 0) + 1
+        result['parameter_dtype_numel'] = dtypes
+        result['module_compute_dtype_counts'] = compute
         result['note'] = 'Parameter storage excludes activations, optimizer states, buffers and some quantization metadata; device locations are observations, not proof of offload behavior during execution.'
     return result
 
@@ -167,7 +178,9 @@ def validate_sharding(c, model):
         if devices != set(range(expected)):
             raise RuntimeError(f'Model did not use all selected GPUs: actual={devices}, expected={expected}')
         if any(p.device.type != 'cuda' for p in model.parameters()):
-            raise RuntimeError('Three-card recipe requires CUDA-resident parameters; unexpected CPU/meta placement')
+            raise RuntimeError('GPU-only recipe requires CUDA-resident parameters; unexpected CPU/meta placement')
+        if c.get('device_map') == 'explicit_layers':
+            validate_device_plan(model, plan_from_config(c))
         model.is_parallelizable = True
         model.model_parallel = True
 
@@ -182,23 +195,35 @@ def load_model(c, observer=None):
     if torch.cuda.device_count() != expected:
         raise RuntimeError('Visible CUDA device count differs from configuration')
     sharded = expected > 1
-    if sharded and c.get('device_map') != 'balanced':
-        raise ValueError('Multiple GPUs require explicit balanced model sharding')
+    if sharded and c.get('device_map') not in ('balanced', 'explicit_layers'):
+        raise ValueError('Multiple GPUs require balanced or explicit_layers model sharding')
     if sharded and c['offload_embedding']:
         raise ValueError('Disable embedding offload for this GPU-only sharding experiment')
     major, minor = torch.cuda.get_device_capability(0)
     use_bf16 = all(torch.cuda.get_device_capability(i)[0] >= 8 for i in range(expected)) and torch.cuda.is_bf16_supported()
-    # Unsloth refuses fp16 for qwen3_5; on Turing (no bf16) Trainer fp16 autocast yields inf grad_norm.
+    precision = c.get('precision', 'auto')
+    if precision not in ('auto', 'fp32', 'bf16'):
+        raise ValueError('precision must be auto, fp32 or bf16; FP16 training is disabled')
+    if precision == 'bf16' and not use_bf16:
+        raise ValueError('Selected GPUs do not all support hardware BF16')
+    use_bf16 = use_bf16 and precision != 'fp32'
     dtype = torch.bfloat16 if use_bf16 else torch.float32
     placement = {'device_map': {'': 0}}
     if sharded:
-        budget = c.get('weight_budget_per_gpu', '20GiB')
-        placement = {'device_map': 'balanced', 'max_memory': {i: budget for i in range(expected)}}
-    model, processor = FastModel.from_pretrained(
+        if c.get('device_map') == 'explicit_layers':
+            placement = {'device_map': plan_from_config(c)}
+            print('Explicit device map:', json.dumps(placement['device_map']), flush=True)
+        else:
+            budget = c.get('weight_budget_per_gpu', '20GiB')
+            placement = {'device_map': 'balanced', 'max_memory': {i: budget for i in range(expected)}}
+    loader_kwargs = dict(
         model_name=c['model_path'], max_seq_length=c['max_seq_length'],
         dtype=dtype, load_in_4bit=True, full_finetuning=False,
         offload_embedding=c['offload_embedding'], local_files_only=True,
         **placement)
+    if c.get('attn_implementation'):
+        loader_kwargs['attn_implementation'] = c['attn_implementation']
+    model, processor = FastModel.from_pretrained(**loader_kwargs)
     if observer: observer('base_loaded', model)
     validate_sharding(c, model)
     model = FastModel.get_peft_model(
@@ -210,10 +235,23 @@ def load_model(c, observer=None):
     if observer: observer('lora_created', model)
     validate_sharding(c, model)
     model.config.use_cache = False
+    chunk_info = {}
+    if c.get('mlp_chunk_tokens', 0):
+        from chunked_mlp import install_chunked_mlp
+        chunk_info = install_chunked_mlp(model, c['mlp_chunk_tokens'])
+        print('Chunked MLP:', json.dumps(chunk_info), flush=True)
+        if observer: observer('mlp_chunking_installed', model)
+    diag_info = {}
+    if c.get('runtime_diagnostics'):
+        from runtime_diagnostics import install_runtime_diagnostics
+        diag_info = install_runtime_diagnostics(model, c)
+        print('Runtime diagnostics:', json.dumps(diag_info), flush=True)
+        if observer: observer('diagnostics_installed', model)
     trainable = [(n, p) for n, p in model.named_parameters() if p.requires_grad]
     if not trainable or any('lora_' not in n for n, _ in trainable):
         raise RuntimeError('Expected only LoRA parameters to be trainable')
-    return model, processor, {'dtype': str(dtype), 'bf16': use_bf16, 'fp16': False,
+    return model, processor, {**chunk_info, **diag_info, 'dtype': str(dtype), 'bf16': use_bf16, 'fp16': False,
+        'attn_implementation': getattr(model.config, '_attn_implementation', None),
         'compute_capability': [major, minor],
         'parallelism': 'single_process_layer_sharding' if sharded else 'single_gpu',
         'physical_gpu_indices': gpu_indices(c['gpu']),
@@ -251,7 +289,7 @@ def make_trainer(c, model, tokenizer, train, val, output, max_steps=-1, probe=Fa
     kwargs = dict(output_dir=str(output), per_device_train_batch_size=1,
         per_device_eval_batch_size=1, gradient_accumulation_steps=1 if probe else c['gradient_accumulation_steps'],
         learning_rate=c['learning_rate'], num_train_epochs=c['epochs'], max_steps=max_steps,
-        optim=c['optim'], fp16=bool(c.get('fp16', False)), bf16=bool(c.get('bf16', False)),
+        optim=c['optim'], fp16=False, bf16=bool(c.get('bf16', False)),
         max_grad_norm=c.get('max_grad_norm', 1.0),
         logging_steps=1, logging_nan_inf_filter=False, report_to='none',
         save_strategy='no' if probe else 'steps', save_steps=c['save_steps'], save_total_limit=2,

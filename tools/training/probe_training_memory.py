@@ -11,6 +11,23 @@ from training_core import (config, offline, write_json, load_model, text_tokeniz
                            prepare, make_trainer, metadata, memory_snapshot, synchronize_gpus)
 
 
+def attach_diagnostics(result, exc=None):
+    try:
+        from runtime_diagnostics import finalize_diagnostics
+        summary = finalize_diagnostics(exc)
+    except Exception as diag_exc:
+        result['diagnostics_error'] = repr(diag_exc)
+        return
+    if summary is None:
+        return
+    result['diagnostics'] = summary
+    if summary.get('memory_peaks_comparable_to_uninstrumented_probe') is False:
+        result['diagnostics_memory_caveat'] = (
+            'Runtime diagnostics wrapped SDPA, decoder forwards, and aten dispatch; '
+            'this run may graph-break or disable compile at those sites. '
+            'Do not compare memory peaks to uninstrumented probes.')
+
+
 def worker(c, length, mode, out):
     offline(c['gpu'])
     c['max_seq_length'] = length
@@ -18,6 +35,13 @@ def worker(c, length, mode, out):
               'requested_placement': c.get('device_map', 'single_gpu'),
               'weight_budget_per_gpu': c.get('weight_budget_per_gpu'),
               'offload_embedding_requested': c['offload_embedding']}
+    if c.get('runtime_diagnostics'):
+        c['diagnostics_dir'] = str(out)
+        result['diagnostics_dir'] = str(out)
+        result['diagnostics_memory_caveat'] = (
+            'Runtime diagnostics wrapped SDPA, decoder forwards, and aten dispatch; '
+            'this run may graph-break or disable compile at those sites. '
+            'Do not compare memory peaks to uninstrumented probes.')
     write_json(out / 'result.json', result)
     start = time.monotonic()
     snapshots = []
@@ -99,6 +123,7 @@ def worker(c, length, mode, out):
             peak_reserved_gib=torch.cuda.max_memory_reserved() / 2**30,
             elapsed_seconds=time.monotonic() - start,
             caveat='Includes first-run compilation; short probe is not long-run stability or task quality')
+        attach_diagnostics(result)
         metadata(c, out, tokenizer)
         write_json(out / 'result.json', result)
         return 0
@@ -111,6 +136,7 @@ def worker(c, length, mode, out):
             except Exception: pass
         result.update(status=status, error=str(exc), traceback=traceback.format_exc(),
                       elapsed_seconds=time.monotonic() - start)
+        attach_diagnostics(result, exc)
         write_json(out / 'result.json', result)
         traceback.print_exc()
         return 1
